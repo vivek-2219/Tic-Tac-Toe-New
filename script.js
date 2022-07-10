@@ -9,6 +9,7 @@ let turn1 = document.querySelector('.turn1');
 let turn2 = document.querySelector('.turn2');
 let title1 = document.querySelector('.title1');
 let title2 = document.querySelector('.title2');
+let winnerDiv = document.querySelector('.winnerDiv');
 let winner = document.querySelector('.winner');
 
 // Music variables.
@@ -98,17 +99,13 @@ blocks.forEach(element => {
         gameArray.forEach(element => {
             if ((blocks[element[0]].innerHTML.slice(10, 15) === (blocks[element[1]].innerHTML.slice(10, 15))) && (blocks[element[1]].innerHTML.slice(10, 15) === (blocks[element[2]].innerHTML.slice(10, 15))) && (blocks[element[0]].innerHTML !== '')) {
                 gameoverMusic.play();
+                winnerDiv.style.display = 'block';
                 if (blocks[element[0]].innerHTML.slice(10, 15) === 'circl' && winner.innerHTML === '') {
                     winner.innerHTML = `${title1.innerHTML} wins`;
                 }
                 else if (blocks[element[0]].innerHTML.slice(10, 15) === 'cross' && winner.innerHTML === '') {
                     winner.innerHTML = `${title2.innerHTML} wins`;
                 };
-                blocks.forEach(element=>{
-                    element.addEventListener('click', ()=>{
-                        element.innerHTML;
-                    });
-                });
             };
         });
     });
@@ -126,6 +123,7 @@ restart.addEventListener('click', () => {
     playerTwo.style.backgroundColor = 'rgb(174, 174, 236)';
     playerOne.style.backgroundColor = 'green';
 
+    winnerDiv.style.display = 'none';
     winner.innerHTML = '';
 });
 

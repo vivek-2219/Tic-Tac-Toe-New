@@ -67,14 +67,23 @@
     color: white;
 }
 
+.winnerDiv {
+    display: none;
+}
+
 .winner {
     width: 100vw;
+    height: 50vh;
     color: white;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: black;
     font-size: 44px;
     position: absolute;
-    top: 23px;
+    top: 50%;
+    left: 50vw;
+    transform: translate(-50%, -50%);;
 }
 
 @media screen and (max-width: 1200px) {
