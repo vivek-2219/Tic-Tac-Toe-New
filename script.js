@@ -40,9 +40,19 @@ let a = prompt('O Player');
 let b = prompt('X Player');
 
 // Displaying the name of players in the turn box.
-title1.innerHTML = a;
-title2.innerHTML = b;
+if (a !== '') {
+    title1.innerHTML = a;
+}
+else {
+    title1.innerHTML = 'O Player';
+}
 
+if (b !== '') {
+    title2.innerHTML = b;
+}
+else {
+    title2.innerHTML = 'X Player';
+}
 
 // Generate cross and circle when clicked on the respective block.
 blocks.forEach(element => {
@@ -88,12 +98,17 @@ blocks.forEach(element => {
         gameArray.forEach(element => {
             if ((blocks[element[0]].innerHTML.slice(10, 15) === (blocks[element[1]].innerHTML.slice(10, 15))) && (blocks[element[1]].innerHTML.slice(10, 15) === (blocks[element[2]].innerHTML.slice(10, 15))) && (blocks[element[0]].innerHTML !== '')) {
                 gameoverMusic.play();
-                if (blocks[element[0]].innerHTML.slice(10, 15) === 'circl') {
+                if (blocks[element[0]].innerHTML.slice(10, 15) === 'circl' && winner.innerHTML === '') {
                     winner.innerHTML = `${title1.innerHTML} wins`;
                 }
-                else {
+                else if (blocks[element[0]].innerHTML.slice(10, 15) === 'cross' && winner.innerHTML === '') {
                     winner.innerHTML = `${title2.innerHTML} wins`;
                 };
+                blocks.forEach(element=>{
+                    element.addEventListener('click', ()=>{
+                        element.innerHTML;
+                    });
+                });
             };
         });
     });
@@ -110,5 +125,7 @@ restart.addEventListener('click', () => {
 
     playerTwo.style.backgroundColor = 'rgb(174, 174, 236)';
     playerOne.style.backgroundColor = 'green';
+
+    winner.innerHTML = '';
 });
 
