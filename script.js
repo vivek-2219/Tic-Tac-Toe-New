@@ -106,7 +106,7 @@ blocks.forEach(element => {
                 };
                 blocks.forEach(element=>{
                     element.addEventListener('click', ()=>{
-                        element.innerHTML;
+                        element.innerHTML = '';
                     });
                 });
             };
