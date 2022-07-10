@@ -71,7 +71,8 @@
     width: 100vw;
     color: white;
     text-align: center;
-    font-size: 34px;
+    background-color: black;
+    font-size: 44px;
     position: absolute;
     top: 23px;
 }
@@ -105,5 +106,12 @@
 
     .restart {
         width: 90vw;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .container {
+        display: flex;
+        flex-direction: column;
     }
 }
