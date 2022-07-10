@@ -36,12 +36,12 @@ let media1200 = window.matchMedia('(max-width: 1200px)');
 let media500 = window.matchMedia('(max-width: 500px)');
 
 // Taking the name of players using prompt.
-// let a = prompt('O Player');
-// let b = prompt('X Player');
+let a = prompt('O Player');
+let b = prompt('X Player');
 
-// // Displaying the name of players in the turn box.
-// title1.innerHTML = a;
-// title2.innerHTML = b;
+// Displaying the name of players in the turn box.
+title1.innerHTML = a;
+title2.innerHTML = b;
 
 
 // Generate cross and circle when clicked on the respective block.
