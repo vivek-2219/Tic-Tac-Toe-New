@@ -9,6 +9,7 @@ let turn1 = document.querySelector('.turn1');
 let turn2 = document.querySelector('.turn2');
 let title1 = document.querySelector('.title1');
 let title2 = document.querySelector('.title2');
+let winner = document.querySelector('.winner');
 
 // Music variables.
 let tingMusic = new Audio('ting.mp3');
@@ -35,12 +36,12 @@ let media1200 = window.matchMedia('(max-width: 1200px)');
 let media500 = window.matchMedia('(max-width: 500px)');
 
 // Taking the name of players using prompt.
-let a = prompt('O Player');
-let b = prompt('X Player');
+// let a = prompt('O Player');
+// let b = prompt('X Player');
 
-// Displaying the name of players in the turn box.
-title1.innerHTML = a;
-title2.innerHTML = b;
+// // Displaying the name of players in the turn box.
+// title1.innerHTML = a;
+// title2.innerHTML = b;
 
 
 // Generate cross and circle when clicked on the respective block.
@@ -87,6 +88,12 @@ blocks.forEach(element => {
         gameArray.forEach(element => {
             if ((blocks[element[0]].innerHTML.slice(10, 15) === (blocks[element[1]].innerHTML.slice(10, 15))) && (blocks[element[1]].innerHTML.slice(10, 15) === (blocks[element[2]].innerHTML.slice(10, 15))) && (blocks[element[0]].innerHTML !== '')) {
                 gameoverMusic.play();
+                if (blocks[element[0]].innerHTML.slice(10, 15) === 'circl') {
+                    winner.innerHTML = `${title1.innerHTML} wins`;
+                }
+                else {
+                    winner.innerHTML = `${title2.innerHTML} wins`;
+                };
             };
         });
     });

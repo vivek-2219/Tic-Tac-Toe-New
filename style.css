@@ -67,6 +67,15 @@
     color: white;
 }
 
+.winner {
+    width: 100vw;
+    color: white;
+    text-align: center;
+    font-size: 34px;
+    position: absolute;
+    top: 23px;
+}
+
 @media screen and (max-width: 1200px) {
     .gameBoard {
         min-width: 450px;
