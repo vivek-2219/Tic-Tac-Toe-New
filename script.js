@@ -106,14 +106,6 @@ blocks.forEach(element => {
                 else if (blocks[element[0]].innerHTML.slice(10, 15) === 'cross' && winner.innerHTML === '') {
                     winner.innerHTML = `${title2.innerHTML} wins`;
                 };
-<<<<<<< HEAD
-=======
-                blocks.forEach(element=>{
-                    element.addEventListener('click', ()=>{
-                        element.innerHTML = '';
-                    });
-                });
->>>>>>> f9d8e4414d258bde5c49998afbf78796c4d460b7
             };
         });
     });
