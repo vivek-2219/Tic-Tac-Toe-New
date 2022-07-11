@@ -120,7 +120,7 @@
 
 @media screen and (max-width: 900px) {
     .container {
-        display: flex;
+        display: none;
         flex-direction: column;
     }
 }
