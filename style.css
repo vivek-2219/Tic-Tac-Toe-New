@@ -156,7 +156,7 @@
 }
 
 .username button :hover {
-    background-color: blue;
+    background-color: rgb(106, 106, 106);
     color: white;
     cursor: pointer;
     transition: all 0.5s ease-in-out;
