@@ -12,6 +12,12 @@ let title2 = document.querySelector('.title2');
 let winnerDiv = document.querySelector('.winnerDiv');
 let winner = document.querySelector('.winner');
 
+// Dealing with username boxes.
+let username = document.querySelectorAll('.username');
+let btn = document.querySelectorAll('.btn');
+let OInput = document.querySelector('.OInput');
+let XInput = document.querySelector('.XInput');
+
 // Music variables.
 let tingMusic = new Audio('ting.mp3');
 let backgroundMusic = new Audio('background.mp3');
@@ -36,24 +42,32 @@ let gameArray = [
 let media1200 = window.matchMedia('(max-width: 1200px)');
 let media500 = window.matchMedia('(max-width: 500px)');
 
-// Taking the name of players using prompt.
-let a = prompt('O Player');
-let b = prompt('X Player');
+// Move box 2 very far from the main game so that it may not alter the game content.
+username[1].style.top = '-1234px';
 
-// Displaying the name of players in the turn box.
-if (a !== '') {
-    title1.innerHTML = a;
-}
-else {
-    title1.innerHTML = 'O Player';
-}
+// Login for O Player box.
+btn[0].addEventListener('click', ()=>{
+    if (OInput.value === '') {
+        title1.innerHTML = 'O Player';
+    }
+    else {
+        title1.innerHTML = OInput.value;
+    };
+    username[0].style.top = '-1234px';
+    username[1].style.top = '0px';
+});
 
-if (b !== '') {
-    title2.innerHTML = b;
-}
-else {
-    title2.innerHTML = 'X Player';
-}
+// Logic for X Player box.
+btn[1].addEventListener('click', ()=>{
+    if (XInput.value === '') {
+        title2.innerHTML = 'X Player';
+    }
+    else {
+        title2.innerHTML = XInput.value;
+    };
+    username[1].style.top = '-1234px';
+    container.style.display = 'flex';
+});
 
 // Generate cross and circle when clicked on the respective block.
 blocks.forEach(element => {
