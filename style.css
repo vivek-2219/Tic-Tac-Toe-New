@@ -73,7 +73,7 @@
 
 .winner {
     width: 100vw;
-    height: 50vh;
+    height: 30vh;
     color: white;
     display: flex;
     justify-content: center;
@@ -165,3 +165,5 @@
 .btn {
     padding: 4px;
 }
+
+
